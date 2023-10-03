@@ -1,6 +1,6 @@
 # Redux-Store [![MIT](https://img.shields.io/static/v1.svg?label=📃%20License&message=MIT&color=important)](./LICENSE)
 
-A e-commerce platform using Redux.
+An e-commerce platform using `Redux Store`. Not to confuse with an actual store website that sells goods, `Redux Store` brings together the state, actions, and reducers that make up an app. Since Redux apps always have a single store, hence the singular `Store`. For more info, please visit [Redux Store](https://redux.js.org/tutorials/fundamentals/part-4-store).
 
 ## Table of Contents
 
@@ -19,6 +19,14 @@ AS a senior engineer working on an e-commerce platform
 I WANT my platform to use Redux to manage global state instead of the Context API
 SO THAT my website's state management is taken out of the React ecosystem
 ```
+
+`Redux Store` has several responsibilities:
+
+- Holds the current application state inside
+- Allows access to the current state via `store.getState()`;
+- Allows state to be updated via `store.dispatch(action)`;
+- Registers listener callbacks via `store.subscribe(listener)`;
+- Handles unregistering of listeners via the unsubscribe function returned by `store.subscribe(listener)`.
 
 [_back to top_](#table-of-contents)
 
@@ -46,6 +54,9 @@ SO THAT my website's state management is taken out of the React ecosystem
   - [![Vite React Plugin](https://img.shields.io/badge/Vite%20React%20Plugin-4.1.0-lightblue?logo=vite)](https://vitejs.dev/)
 - [![Stripe](https://img.shields.io/badge/Stripe-13.8.0-blue?logo=stripe)](https://stripe.com/)
   - [![Stripe.js](https://img.shields.io/badge/Stripe.js-2.1.7-blue?logo=stripe)](https://stripe.com/docs/js)
+- [![Redux](https://img.shields.io/badge/Redux-4.2.1-purple?logo=redux)](https://redux.js.org/)
+  - [![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-1.9.6-purple?logo=redux)](https://redux-toolkit.js.org/)
+  - [![React Redux](https://img.shields.io/badge/React%20Redux-8.1.3-purple?logo=redux)](https://react-redux.js.org/)
 
 [_back to top_](#table-of-contents)
 
@@ -78,7 +89,7 @@ SO THAT my website's state management is taken out of the React ecosystem
    - Client:
 
      ```powershell
-     npm i @apollo/client@3.8.4 @stripe/stripe-js@2.1.7 @testing-library/react@14.0.0 graphql@16.8.1 happy-dom@12.6.0 jwt-decode@3.1.2 react@18.2.0 react-dom@18.2.0 react-router-dom@6.16.0 vitest@0.34.6
+     npm i @apollo/client@3.8.4 @stripe/stripe-js@2.1.7 @testing-library/react@14.0.0 graphql@16.8.1 happy-dom@12.6.0 jwt-decode@3.1.2 react@18.2.0 react-dom@18.2.0 react-router-dom@6.16.0 vitest@0.34.6 @reduxjs/toolkit@1.9.6 react-redux@8.1.3
      &&
      npm i @types/react@18.2.24 @types/react-dom@18.2.8 @vitejs/plugin-react@4.1.0 eslint@8.50.0 eslint-plugin-react@7.33.2 eslint-plugin-react-hooks@4.6.0 eslint-plugin-react-refresh@0.4.3 vite@4.4.9 --save-dev
      ```
