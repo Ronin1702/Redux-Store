@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
@@ -13,8 +14,6 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-
-require('dotenv').config();
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {

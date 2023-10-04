@@ -1,7 +1,7 @@
 {
-  "name": "mern-shopping",
+  "name": "Redux-Store",
   "version": "1.0.0",
-  "description": "",
+  "description": "An e-commerce platform using Redux Store.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server --ignore client",
@@ -10,9 +10,9 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["Redux", "Store", "React", "Node", "Express", "MongoDB", "Mongoose", "GraphQL", "Apollo", "Stripe", "Heroku"],
+  "author": "Kai Chen",
+  "license": "MIT",
   "devDependencies": {
     "concurrently": "^5.1.0",
     "dotenv": "^16.3.1"
