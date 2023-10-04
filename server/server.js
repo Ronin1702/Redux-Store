@@ -14,6 +14,8 @@ const server = new ApolloServer({
   resolvers,
 });
 
+require('dotenv').config();
+
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
   await server.start();

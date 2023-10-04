@@ -15,7 +15,8 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
   // const [state, dispatch] = useStoreContext();
-  const state = useSelector((state) => state);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartOpen = useSelector((state) => state.cart.cartOpen);
   const dispatch = useDispatch();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
@@ -34,10 +35,10 @@ const Cart = () => {
       dispatch(actions.addMultipleToCart(cart));
     }
 
-    if (!state.cart.length) {
+    if (!cartItems.length) {
       getCart();
     }
-  }, [state.cart.length, dispatch]);
+  }, [cartItems.length, dispatch]);
 
   function toggleCart() {
     // dispatch({ type: TOGGLE_CART });
@@ -46,7 +47,7 @@ const Cart = () => {
 
   function calculateTotal() {
     let sum = 0;
-    state.cart.forEach((item) => {
+    cartItems.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
     });
     return sum.toFixed(2);
@@ -55,7 +56,7 @@ const Cart = () => {
   function submitCheckout() {
     const productIds = [];
 
-    state.cart.forEach((item) => {
+    cartItems.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
         productIds.push(item._id);
       }
@@ -66,10 +67,10 @@ const Cart = () => {
     });
   }
 
-  if (!state.cartOpen) {
+  if (!cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
+      <div className='cart-closed' onClick={toggleCart}>
+        <span role='img' aria-label='trash'>
           🛒
         </span>
       </div>
@@ -77,18 +78,18 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
+    <div className='cart'>
+      <div className='close' onClick={toggleCart}>
         [close]
       </div>
       <h2>Shopping Cart</h2>
-      {state.cart.length ? (
+      {cartItems.length ? (
         <div>
-          {state.cart.map((item) => (
+          {cartItems.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div className="flex-row space-between">
+          <div className='flex-row space-between'>
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
@@ -100,7 +101,7 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
+          <span role='img' aria-label='shocked'>
             😱
           </span>
           You haven't added anything to your cart yet!
