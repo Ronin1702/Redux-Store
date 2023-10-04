@@ -14,7 +14,8 @@ function ProductList() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const { currentCategory } = state;
+  // const { currentCategory } = state;
+  const currentCategory = useSelector((state) => state.category.currentCategory);
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
