@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "An e-commerce platform using Redux Store.",
   "main": "server/server.js",
+  "engines": {
+    "node": "20.6.1",
+    "npm": "10.1.0"
+  },
   "scripts": {
     "start": "node server/server.js",
     "server": "cd server && nodemon server.js --ignore client",
