@@ -42,8 +42,33 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          <div
+            style={{
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <span role="img" aria-label="shopping bag">🛍️</span>
+            Redux Store
+            <div style={{ position: 'relative', top: -20, right: -5 }}>
+              <a
+                href='https://redux.js.org/tutorials/fundamentals/part-4-store'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img
+                  src='https://img.shields.io/badge/Redux%20Store-%23764abc?logo=Redux&color=764abc'
+                  alt='Redux Store badge'
+                />
+              </a>
+              <img
+                src='https://img.shields.io/badge/D_E_M_O-blue'
+                alt='DEMO badge'
+                style={{marginLeft: 1 +`px`}}
+              />
+            </div>
+          </div>
         </Link>
       </h1>
 

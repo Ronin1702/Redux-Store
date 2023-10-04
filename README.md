@@ -1,6 +1,9 @@
 # Redux-Store [![MIT](https://img.shields.io/static/v1.svg?label=📃%20License&message=MIT&color=important)](./LICENSE)
 
-An e-commerce platform using `Redux Store`. Not to confuse with an actual store website that sells goods, `Redux Store` brings together the state, actions, and reducers that make up an app. Since Redux apps always have a single store, hence the singular `Store`. For more info, please visit [Redux Store](https://redux.js.org/tutorials/fundamentals/part-4-store).
+An e-commerce platform using `Redux Store`. Not to confuse with an actual store website that sells goods, `Redux Store` brings together the state, actions, and reducers that make up an app. Since Redux apps always have a single store, hence the singular `Store`. For more info, please visit [Redux Store](https://redux.js.org/tutorials/fundamentals/part-4-store) on [Redux.js.org](https://redux.js.org).
+
+- This demo app is also deployed on [Heroku](https://redux-store-3000-a85a2122e728.herokuapp.com/) as [![Redux Store 3000](https://img.shields.io/badge/Redux%20Store%203000-🛒-blue?logo=redux)](https://redux-store-3000-a85a2122e728.herokuapp.com/)
+- Git Fork the [![GitHub Repo](https://img.shields.io/static/v1.svg?label=GitHub%20Repo&message=📁&color=informational&logo=github)](https://github.com/Ronin1702/Redux-Store) to make your own!
 
 ## Table of Contents
 
@@ -95,11 +98,19 @@ SO THAT my website's state management is taken out of the React ecosystem
      ```
 
 3. **Config**: Please add the correct environmental variables in the `.env` file in the `server` directory like the example below:
+    > Deploying to Heroku you will need to add these environmental variables to the Heroku Config Vars as well.
 
-   ```javascript
-   MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<collection-name>
-   SECRET=<SECRET-TO-JWT>
-   ```
+      ```javascript
+      MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<collection-name>;
+      SECRET=<SECRET-TO-JWT>;
+      STRIPE_SECRET_KEY=<Your_own_test_key_or_use_this_one:sk_test_4eC39HqLyjWDarjtT1zdp7dc>;
+      ```
+
+   If you've decided to use the default `stripe secret key` then please use the matching `publishable key` in the frontend below:
+
+      ```javascript
+      const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+      ```
 
 [_back to top_](#table-of-contents)
 
@@ -127,18 +138,28 @@ SO THAT my website's state management is taken out of the React ecosystem
     THEN I find that the app uses Redux instead of the Context API
   ```
 
-[_back to top_](#table-of-contents)
+### Stripe Test
+
+- If you would like to test the stripe payment, feel free to use the following [testing credit card numbers](https://stripe.com/docs/testing?testing-method=card-numbers) provided by [Stripe Docs](https://stripe.com/docs) with any future date and any 3 digit CVC code (4 for American Express).
+
+  ![Visa](https://img.shields.io/badge/Visa-4242%204242%204242%204242-blue?labelColor=blue&color=gray)
+  ![Master](https://img.shields.io/badge/Master-5555%205555%205555%204444-red?labelColor=red&color=gray)
+  ![American Express](https://img.shields.io/badge/American%20Express-3782%208224%206310%20005-green?labelColor=green&color=gray)
+  ![Discover](https://img.shields.io/badge/Discover-6011%201111%201111%201117-orange?labelColor=orange&color=gray)
+  ![Diners Club](https://img.shields.io/badge/Diners%20Club-3056%209300%200902%200004-teal?labelColor=teal&color=gray)
+  ![JCB](https://img.shields.io/badge/JCB-3566%200020%202036%200505-pink?labelColor=pink&color=gray)
+  ![Union Pay](https://img.shields.io/badge/Union%20Pay-6200%200000%200000%200005-purple?labelColor=purple&color=gray)
 
 ## Screenshots
 
-<!-- ![Screenshot](./Screenshot.png) -->
+![Screenshot](./Screenshot.png)
 
 ## Links
 
 [![Tweet about this](https://img.shields.io/static/v1.svg?label=Tweet%20about%20this&message=🎵&color=blue&logo=twitter&style=social)](https://twitter.com/intent/tweet?text=Check%20out%20this%20Redux%20Store%20App%20on%20GitHub:%20https://github.com/Ronin1702/Redux-Store)
 
-- GitHub Repo : [Redux-Store](https://github.com/Ronin1702/Book-Search-Engine)
-<!-- - HeroKu Deployed Link : [Redux-Store](https://redux-store.herokuapp.com/) -->
+- GitHub Repo : [![GitHub Repo](https://img.shields.io/static/v1.svg?label=Redux-Store&message=📁&color=informational&logo=github)](https://github.com/Ronin1702/Redux-Store)
+- HeroKu Deployed Link : [![Redux Store 3000](https://img.shields.io/badge/Redux%20Store%203000-🛒-blue?logo=redux)](https://redux-store-3000-a85a2122e728.herokuapp.com/)
 
 [_back to top_](#table-of-contents)
 

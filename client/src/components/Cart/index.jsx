@@ -71,7 +71,7 @@ const Cart = () => {
   if (!cartOpen) {
     return (
       <div className='cart-closed' onClick={toggleCart}>
-        <span role='img' aria-label='trash'>
+        <span className='cart-icon' role='img' aria-label='cart icon'>
           🛒
         </span>
       </div>
